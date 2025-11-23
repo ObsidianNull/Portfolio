@@ -1,0 +1,14 @@
+{
+  "dashboard": "DNS Exfiltration Detection",
+  "description": "Dashboard for detecting potential DNS data exfiltration",
+  "panels": [
+    {
+      "title": "Unusual DNS Query Volume",
+      "search": "index=* sourcetype=dns | stats count by src_ip | where count > 1000"
+    },
+    {
+      "title": "Long DNS Query Names",
+      "search": "index=* sourcetype=dns | eval query_length=len(query) | where query_length > 50 | table _time, src_ip, query, query_length"
+    }
+  ]
+}

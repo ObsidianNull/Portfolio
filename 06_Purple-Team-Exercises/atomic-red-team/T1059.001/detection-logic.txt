@@ -1,0 +1,112 @@
+## Detection Logic for T1059.001 - PowerShell Execution
+
+### Detection Rule 1: Suspicious PowerShell Flags
+**Platform:** Windows Event Log / Sysmon
+**Data Source:** Event ID 4688, Sysmon Event ID 1
+
+**Logic:**
+Process Name: powershell.exe OR pwsh.exe
+AND CommandLine contains ANY of:
+  - "-EncodedCommand"
+  - "-enc"
+  - "-NoProfile"
+  - "-nop"
+  - "-WindowStyle Hidden"
+  - "-w hidden"
+  - "-NonInteractive"
+  - "DownloadString"
+  - "IEX"
+  - "Invoke-Expression"
+  - "Net.WebClient"
+
+**Severity:** High
+**Confidence:** High
+
+
+### Detection Rule 2: PowerShell Script Block Logging
+**Platform:** Windows Event Log
+**Data Source:** Event ID 4104
+
+**Logic:**
+EventID: 4104
+AND ScriptBlockText contains ANY of:
+  - "DownloadString"
+  - "DownloadFile"
+  - "Invoke-Expression"
+  - "IEX"
+  - "Net.WebClient"
+  - "System.Net.Sockets"
+  - "Reflection.Assembly"
+  - "FromBase64String"
+
+**Severity:** High
+**Confidence:** Medium
+
+
+### Detection Rule 3: Encoded PowerShell Command
+**Platform:** SIEM (Splunk/Elastic)
+**Data Source:** Sysmon Event ID 1, Windows Event ID 4688
+
+**Splunk Query:**
+```
+index=windows sourcetype=WinEventLog:Security EventCode=4688 
+(Process_Name="*powershell.exe" OR Process_Name="*pwsh.exe")
+(CommandLine="*-EncodedCommand*" OR CommandLine="*-enc*")
+| rex field=CommandLine "-(?:EncodedCommand|enc)\s+(?<encoded_cmd>[A-Za-z0-9+/=]+)"
+| eval decoded_cmd=base64decode(encoded_cmd)
+| search decoded_cmd IN ("*IEX*", "*DownloadString*", "*Net.WebClient*")
+| table _time, Computer, User, CommandLine, decoded_cmd
+```
+
+**Severity:** Critical
+**Confidence:** High
+
+
+### Detection Rule 4: PowerShell Network Activity
+**Platform:** Network/EDR
+**Data Source:** Network connections from PowerShell process
+
+**Logic:**
+Process: powershell.exe OR pwsh.exe
+AND Network Connection Established
+AND (
+  Destination Port: 80, 443, 8080
+  OR 
+  Suspicious Domain Pattern
+)
+
+**Correlation:**
+Within 60 seconds of PowerShell process creation with suspicious flags
+
+**Severity:** High
+**Confidence:** Medium
+
+
+### Detection Rule 5: PowerShell Parent-Child Process Anomaly
+**Platform:** Sysmon / EDR
+**Data Source:** Sysmon Event ID 1
+
+**Logic:**
+Parent Process: cmd.exe, wscript.exe, cscript.exe, mshta.exe, rundll32.exe
+AND Child Process: powershell.exe, pwsh.exe
+AND CommandLine contains suspicious flags (see Rule 1)
+
+**Severity:** High
+**Confidence:** High
+
+
+### Tuning Recommendations
+1. Whitelist legitimate administrative PowerShell scripts
+2. Monitor for false positives from automation tools
+3. Correlate with threat intelligence feeds
+4. Adjust severity based on user context (admin vs standard user)
+5. Implement behavioral baselining for PowerShell usage
+
+
+### Response Playbook
+1. Isolate affected system if high severity
+2. Capture PowerShell process memory
+3. Review user account activity
+4. Check for lateral movement indicators
+5. Analyze PowerShell transcript logs
+6. Hunt for similar activity across environment

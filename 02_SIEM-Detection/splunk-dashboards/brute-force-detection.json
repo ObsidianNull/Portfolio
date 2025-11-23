@@ -1,0 +1,14 @@
+{
+  "dashboard": "Brute Force Detection",
+  "description": "Dashboard for detecting brute force authentication attempts",
+  "panels": [
+    {
+      "title": "Failed Login Attempts",
+      "search": "index=* sourcetype=WinEventLog:Security EventCode=4625 | stats count by src_ip, user | where count > 5"
+    },
+    {
+      "title": "Failed Logins Over Time",
+      "search": "index=* sourcetype=WinEventLog:Security EventCode=4625 | timechart count by user"
+    }
+  ]
+}

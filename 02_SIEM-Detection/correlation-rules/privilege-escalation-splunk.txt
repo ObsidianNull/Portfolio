@@ -1,0 +1,26 @@
+## Privilege Escalation Detection Rule
+
+### Rule Name
+Suspicious Privilege Escalation Activity
+
+### Description
+Detects potential privilege escalation attempts through user account modifications
+
+### Splunk Query
+```
+index=* sourcetype=WinEventLog:Security (EventCode=4672 OR EventCode=4728 OR EventCode=4732)
+| stats count by user, EventCode, src_ip
+| where count > 3
+| eval severity="CRITICAL"
+```
+
+### Trigger Condition
+- Multiple privilege escalation indicators within short timeframe
+- User added to privileged groups
+- Special privileges assigned to account
+
+### Response Actions
+1. Immediate alert to security team
+2. Investigate user account activity
+3. Review privilege assignment logs
+4. Potential account suspension

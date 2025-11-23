@@ -1,0 +1,24 @@
+## Failed Login Correlation Rule
+
+### Rule Name
+Multiple Failed Login Attempts
+
+### Description
+Detects multiple failed login attempts from the same source IP within a 5-minute window
+
+### Splunk Query
+```
+index=* sourcetype=WinEventLog:Security EventCode=4625 
+| bucket _time span=5m 
+| stats count by _time, src_ip, user 
+| where count > 5
+| eval severity="HIGH"
+```
+
+### Trigger Condition
+- More than 5 failed login attempts within 5 minutes
+
+### Response Actions
+1. Alert SOC team
+2. Block source IP temporarily
+3. Investigate user account for compromise
