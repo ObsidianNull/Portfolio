@@ -1,0 +1,64 @@
+<!--
+  Wazuh Detection Rules — Scheduled Task Persistence
+  MITRE ATT&CK: T1053.005 (Scheduled Task/Job: Scheduled Task)
+  Data Source: Sysmon Event ID 2 (Process Creation)
+  
+  Rule 100200: Base detection — schtasks.exe /create
+  Rule 100201: Elevated — task created with SYSTEM privileges
+  Rule 100202: Elevated — task with persistence trigger (logon/startup)
+  
+  Parent SID 61603: Wazuh built-in rule for Sysmon Event ID 2
+  Deploy to: /var/ossec/etc/rules/local_persistence.xml
+-->
+
+<group name="sysmon,persistence,T1053.005,">
+
+  <!-- Base detection: any schtasks /create -->
+  <rule id="100200" level="10">
+    <if_sid>61603</if_sid>
+    <field name="win.eventdata.image" type="pcre2">(?i)schtasks\.exe$</field>
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)/create\s</field>
+    <description>Scheduled task created via schtasks.exe — T1053.005</description>
+    <mitre>
+      <id>T1053.005</id>
+    </mitre>
+    <options>no_full_log</options>
+    <group>attack,persistence,</group>
+  </rule>
+
+  <!-- Elevated: task runs as SYSTEM -->
+  <rule id="100201" level="14">
+    <if_sid>100200</if_sid>
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)/ru\s+(system|SYSTEM|\"system\")</field>
+    <description>Scheduled task created with SYSTEM privileges — T1053.005</description>
+    <mitre>
+      <id>T1053.005</id>
+    </mitre>
+    <options>no_full_log</options>
+    <group>attack,persistence,privilege_escalation,</group>
+  </rule>
+
+  <!-- Elevated: persistence trigger (logon, startup, idle) -->
+  <rule id="100202" level="14">
+    <if_sid>100200</if_sid>
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)/sc\s+(onlogon|onstart|onidle)</field>
+    <description>Scheduled task with persistence trigger (logon/startup) — T1053.005</description>
+    <mitre>
+      <id>T1053.005</id>
+    </mitre>
+    <options>no_full_log</options>
+    <group>attack,persistence,</group>
+  </rule>
+
+  <!--
+    Tuning: Suppress known scheduled tasks by name.
+    Example for Google Update:
+
+  <rule id="100210" level="0">
+    <if_sid>100200</if_sid>
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)/tn\s+\"GoogleUpdateTask</field>
+    <description>Suppressed: Google Update scheduled task (expected)</description>
+  </rule>
+  -->
+
+</group>

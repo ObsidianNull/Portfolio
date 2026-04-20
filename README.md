@@ -2,7 +2,7 @@
 
 ## 🎯 Overview
 
-Welcome to my cybersecurity portfolio. I am a U.S. Navy Nuclear Surface Warfare Officer and former Cyber Officer (USS Harper’s Ferry) transitioning into the private sector as a Cybersecurity Analyst. I hold a B.S. in Cyber Operations from a CAE-CO accredited university and a CompTIA Security+ certification. My operational background, technical foundation, and leadership experience enable me to approach cybersecurity with discipline, problem-solving, and mission focus.
+Welcome to my cybersecurity portfolio. I am a U.S. Navy Nuclear Surface Warfare Officer and former Cyber Officer (USS Harper’s Ferry) transitioning into the private sector as a Cybersecurity Engineer. I hold a B.S. in Cyber Operations from a CAE-CO accredited university and a CompTIA Security+ certification. My operational background, technical foundation, and leadership experience enable me to approach cybersecurity with discipline, problem-solving, and mission focus.
 
 This portfolio demonstrates my hands-on cybersecurity skills through self-directed projects in vulnerability management, SIEM operations, incident response, network analysis, system hardening, and adversary emulation. All projects were built using my home lab environment (Windows, Linux, Splunk, Nessus, Wireshark, and Atomic Red Team).
 
@@ -96,10 +96,23 @@ Purple team exercises using Atomic Red Team to simulate real-world attack techni
 
 ---
 
+### [07 - Detection Engineering Lab](./07_Detection-Engineering-Lab)
+**Skills Demonstrated:** Detection Engineering | Wazuh SIEM | Sysmon Telemetry | Active Directory | MITRE ATT&CK
+
+Detection engineering lab built on a VMware-based Active Directory environment with Wazuh SIEM and Sysmon. Custom detection rules authored and validated against controlled attack simulations across three MITRE ATT&CK techniques.
+
+**Key Highlights:**
+- End-to-end Sysmon → Wazuh logging pipeline in a domain-joined environment
+- Custom Wazuh rules for PowerShell abuse, scheduled task persistence, and SMB lateral movement
+- Attack simulation with documented test scenarios and expected outcomes
+- Post-engagement detection analysis with false positive tuning and gap identification
+
+---
+
 ## 🔧 Technical Skills
 
 ### Security Tools & Platforms
-- **SIEM:** Splunk, Elastic Stack
+- **SIEM:** Splunk, Wazuh, Elastic Stack
 - **Vulnerability Management:** Nessus, OpenVAS
 - **Network Analysis:** Wireshark, tcpdump, Zeek, NetworkMiner
 - **Endpoint Security:** Sysmon, Windows Event Logs, EDR solutions

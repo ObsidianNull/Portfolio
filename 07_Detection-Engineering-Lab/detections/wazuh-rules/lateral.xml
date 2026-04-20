@@ -1,0 +1,72 @@
+<!--
+  Wazuh Detection Rules — Lateral Movement via SMB
+  MITRE ATT&CK: T1021.002 (Remote Services: SMB/Windows Admin Shares)
+  Data Source: Sysmon Event ID 3 (Network Connection Detected)
+  
+  Rule 100300: Base detection — SMB connection to port 445
+  Rule 100301: Elevated — lateral movement tool initiating SMB
+  Rule 100302: Suppression — expected system process SMB traffic
+  
+  Parent SID 61605: Wazuh built-in rule for Sysmon Event ID 3
+  Deploy to: /var/ossec/etc/rules/local_lateral.xml
+  
+  IMPORTANT: Sysmon Event ID 3 must be enabled in sysmonconfig
+  for port 445 monitoring. Default SwiftOnSecurity config
+  disables most Event ID 3 logging.
+-->
+
+<group name="sysmon,lateral_movement,T1021.002,">
+
+  <!-- Base detection: outbound SMB to internal host -->
+  <rule id="100300" level="10">
+    <if_sid>61605</if_sid>
+    <field name="win.eventdata.destinationPort" type="pcre2">^445$</field>
+    <field name="win.eventdata.destinationIp" type="pcre2">^192\.168\.56\.</field>
+    <description>SMB connection to internal host on port 445 — T1021.002</description>
+    <mitre>
+      <id>T1021.002</id>
+    </mitre>
+    <options>no_full_log</options>
+    <group>attack,lateral_movement,</group>
+  </rule>
+
+  <!-- Elevated: known lateral movement tool initiating SMB -->
+  <rule id="100301" level="14">
+    <if_sid>100300</if_sid>
+    <field name="win.eventdata.image" type="pcre2">(?i)(psexec|psexesvc|net\.exe|cmd\.exe|wmic\.exe)$</field>
+    <description>Lateral movement tool initiating SMB connection — T1021.002</description>
+    <mitre>
+      <id>T1021.002</id>
+    </mitre>
+    <options>no_full_log</options>
+    <group>attack,lateral_movement,</group>
+  </rule>
+
+  <!-- Suppression: expected system processes making SMB connections -->
+  <rule id="100302" level="6">
+    <if_sid>100300</if_sid>
+    <field name="win.eventdata.image" type="pcre2">(?i)(svchost|lsass|system|ntoskrnl|dns)\.exe$</field>
+    <description>Expected system process SMB connection — reduced severity</description>
+    <mitre>
+      <id>T1021.002</id>
+    </mitre>
+    <options>no_full_log</options>
+    <group>system,expected,</group>
+  </rule>
+
+  <!--
+    Future enhancement: frequency-based rule for lateral movement sweeps.
+    Wazuh supports <frequency> and <timeframe> for correlation.
+    Example: 5+ SMB connections to different hosts within 60 seconds.
+    
+  <rule id="100305" level="15" frequency="5" timeframe="60">
+    <if_matched_sid>100300</if_matched_sid>
+    <description>Multiple SMB connections in short timeframe — possible lateral movement sweep</description>
+    <mitre>
+      <id>T1021.002</id>
+    </mitre>
+    <group>attack,lateral_movement,</group>
+  </rule>
+  -->
+
+</group>
