@@ -137,5 +137,5 @@ After executing all scenarios:
 
 | Screenshot | File | Description | Status |
 |---|---|---|---|
-| ![PsExec Command](../screenshots/attack-simulation/psexec-command-execution.png) | `psexec-command-execution.png` | Command prompt on WS01 showing a PsExec or PowerShell bypass test command being executed | ☐ TODO |
-| ![Real-Time Alerts](../screenshots/attack-simulation/realtime-alerts-during-test.png) | `realtime-alerts-during-test.png` | Wazuh Dashboard showing alerts populating in real time during a test scenario | ☐ TODO |
+| ![PsExec Command](../screenshots/attack-simulation/psexec-command-execution.png) | `psexec-command-execution.png` | Command prompt on WS01 showing a PsExec or PowerShell bypass test command being executed | ☐ COMPLETE |
+| ![Real-Time Alerts](../screenshots/attack-simulation/realtime-alerts-during-test.png) | `realtime-alerts-during-test.png` | Wazuh Dashboard showing alerts populating in real time during a test scenario | ☐ COMPLETE |
