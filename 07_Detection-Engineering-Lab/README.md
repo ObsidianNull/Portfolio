@@ -86,3 +86,14 @@ See [architecture/overview.md](architecture/overview.md) for the full architectu
 - Wazuh 4.x (Manager, Agent, Dashboard)
 - Sysmon (SwiftOnSecurity config, customized)
 - PowerShell, cmd.exe, PsExec
+
+## Screenshots
+
+### Environment Overview
+
+| Screenshot | Description | Status |
+|---|---|---|
+| ![VM Inventory](screenshots/setup/vm-inventory.png) | VMware Workstation showing DC01, WS01, and WAZUH-SVR in the VM library | ☐ TODO |
+| ![Wazuh Agents Active](screenshots/setup/wazuh-agents-active.png) | Wazuh Dashboard → Agents list showing DC01 and WS01 as **Active** | ☐ TODO |
+
+> Full per-file screenshot checklists are embedded in each section's markdown file under `setup/`, `detections/`, `attack-simulation/`, and `findings/`.

@@ -67,3 +67,11 @@ GPOs applied in this lab:
 | Deploy-Sysmon | Lab Computers, Lab Servers | Installs and configures Sysmon via startup script |
 | Enable-WinRM | Lab Computers | Enables WinRM for remote management during testing |
 | Audit-Policy | Lab Computers, Lab Servers | Configures advanced audit policy for supplementary event generation |
+
+## Screenshots
+
+| Screenshot | File | Description | Status |
+|---|---|---|---|
+| ![AD OU Structure](../screenshots/setup/ad-ou-structure.png) | `ad-ou-structure.png` | Active Directory Users and Computers showing the OU structure (Lab Users, Lab Computers, Lab Servers, Lab GPOs) | ☐ TODO |
+| ![GPO Management](../screenshots/setup/gpo-management.png) | `gpo-management.png` | Group Policy Management console showing Deploy-Sysmon, Enable-WinRM, and Audit-Policy linked to their OUs | ☐ TODO |
+| ![Domain Join](../screenshots/setup/ws01-domain-join.png) | `ws01-domain-join.png` | PowerShell output of `(Get-WmiObject Win32_ComputerSystem).Domain` on WS01 returning `lab.local` | ☐ TODO |

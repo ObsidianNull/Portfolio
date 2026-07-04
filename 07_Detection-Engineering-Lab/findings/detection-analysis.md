@@ -87,3 +87,10 @@ The SMB base rule (100300) generated the most noise. In a production environment
 ## Conclusion
 
 The detection pipeline is operational and validated against three MITRE ATT&CK techniques. PowerShell and scheduled task detections performed reliably. SMB lateral movement detection requires additional tuning to manage false positive volume from legitimate domain traffic. The primary gaps — COM-based task creation, credential access, and WMI lateral movement — represent the next priority for rule development.
+
+## Screenshots
+
+| Screenshot | File | Description | Status |
+|---|---|---|---|
+| ![SMB False Positives Before](../screenshots/findings/smb-false-positives-before-tuning.png) | `smb-false-positives-before-tuning.png` | Wazuh Dashboard showing Rule 100300 generating high alert volume before tuning — demonstrates the false positive problem | ☐ TODO |
+| ![SMB Reduced Noise After](../screenshots/findings/smb-reduced-noise-after-tuning.png) | `smb-reduced-noise-after-tuning.png` | Wazuh Dashboard after suppression rule 100302 is active — showing reduced noise and lower false positive rate | ☐ TODO |

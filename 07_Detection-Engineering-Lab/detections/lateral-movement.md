@@ -122,3 +122,10 @@ On the target (DC01), Sysmon Event ID 1 also captured the creation of `PSEXESVC.
 - The high-severity rule (100301) is the primary detection — focus tuning on the base rule (100300) to manage volume
 - Implement a frequency-based child rule: a single SMB connection is ambiguous, but multiple connections to different hosts within a short window (e.g., 5 connections in 60 seconds) is a strong lateral movement indicator
 - Cross-correlate with Windows Security Event ID 4624 (logon type 3 — network logon) on the target host for confirmation
+
+## Screenshots
+
+| Screenshot | File | Description | Status |
+|---|---|---|---|
+| ![Alert 100300](../screenshots/detections/alert-100300-smb.png) | `alert-100300-smb.png` | Wazuh Dashboard showing Rule 100300 alert — SMB connection to port 445 on internal host | ☐ TODO |
+| ![Alert 100301](../screenshots/detections/alert-100301-psexec.png) | `alert-100301-psexec.png` | Wazuh Dashboard showing Rule 100301 alert with `PsExec.exe` as the initiating process | ☐ TODO |

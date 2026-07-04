@@ -132,3 +132,10 @@ After executing all scenarios:
 3. Check for any missed detections and document in [findings/detection-analysis.md](../findings/detection-analysis.md)
 4. Revert VMs to pre-test snapshots
 5. Document any unexpected alerts or false positives
+
+## Screenshots
+
+| Screenshot | File | Description | Status |
+|---|---|---|---|
+| ![PsExec Command](../screenshots/attack-simulation/psexec-command-execution.png) | `psexec-command-execution.png` | Command prompt on WS01 showing a PsExec or PowerShell bypass test command being executed | ☐ TODO |
+| ![Real-Time Alerts](../screenshots/attack-simulation/realtime-alerts-during-test.png) | `realtime-alerts-during-test.png` | Wazuh Dashboard showing alerts populating in real time during a test scenario | ☐ TODO |

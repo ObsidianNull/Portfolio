@@ -94,9 +94,17 @@ This tells the agent to monitor the Sysmon operational log and forward events to
 
 ## Dashboard Access
 
-Wazuh Dashboard is accessible at `https://192.168.56.100` (port 443). Default self-signed certificate — browser security exception required.
+Wazuh Dashboard is accessible at `https://192.168.56.40` (port 443). Default self-signed certificate — browser security exception required.
 
 After login, verify:
 - Both agents (DC01, WS01) show as **Active** under Agents
 - Sysmon events are visible under **Events** with `decoder.name: windows_eventchannel`
 - Rule groups include `sysmon` for Sysmon-decoded events
+
+## Screenshots
+
+| Screenshot | File | Description | Status |
+|---|---|---|---|
+| ![Dashboard Login](../screenshots/setup/wazuh-dashboard-login.png) | `wazuh-dashboard-login.png` | Wazuh Dashboard login page at `https://192.168.56.40` — confirms service is running | ☐ TODO |
+| ![Agents Active](../screenshots/setup/wazuh-agents-active.png) | `wazuh-agents-active.png` | Wazuh Dashboard → Agents page showing DC01 and WS01 both **Active** with last keep-alive timestamps | ☐ TODO |
+| ![Agent Control List](../screenshots/setup/agent-control-list.png) | `agent-control-list.png` | Wazuh Manager terminal: output of `sudo /var/ossec/bin/agent_control -l` listing both agents | ☐ TODO |

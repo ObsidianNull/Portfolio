@@ -52,3 +52,11 @@ Confirm DNS resolution from WS01:
 ```
 nslookup dc01.lab.local 192.168.56.10
 ```
+
+## Screenshots
+
+| Screenshot | File | Description | Status |
+|---|---|---|---|
+| ![NIC VMnet1](../screenshots/setup/nic-vmnet1.png) | `nic-vmnet1.png` | VMware network adapter settings on WS01 showing NIC attached to VMnet1 | ☐ TODO |
+| ![Ping Connectivity](../screenshots/setup/ping-connectivity.png) | `ping-connectivity.png` | Successful `ping 192.168.56.10` and `ping 192.168.56.40` from WS01 | ☐ TODO |
+| ![nslookup DNS](../screenshots/setup/nslookup-dns.png) | `nslookup-dns.png` | `nslookup dc01.lab.local` output on WS01 confirming DNS resolution | ☐ TODO |
