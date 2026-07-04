@@ -66,7 +66,7 @@ VMware's host-only adapter acts as the default gateway. DNS resolution is handle
 
 | Screenshot | Description | Status |
 |---|---|---|
-| ![VMnet1 Config](../screenshots/architecture/vmnet1-config.png) | VMware Virtual Network Editor showing VMnet1 host-only adapter at 192.168.56.0/24 with DHCP disabled | ☐ TODO |
+| ![VMnet1 Config](../screenshots/architecture/vmnet1-config.png) | VMware Virtual Network Editor showing VMnet1 host-only adapter at 192.168.56.0/24 with DHCP disabled | ☐ COMPLETE |
 
 ## Security Considerations
 
