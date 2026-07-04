@@ -114,3 +114,10 @@ Both child rules (100201, 100202) fired because the command contained both `/ru 
 - Focus high-severity alerting on tasks that execute from non-standard paths (`C:\Temp`, `C:\Users\Public`, `%APPDATA%`)
 - Cross-reference with Sysmon Event ID 11 to detect task XML file creation in `C:\Windows\System32\Tasks\` for additional confidence
 - Consider aggregating: a single `schtasks /create` is worth investigating, but repeated creation attempts in a short window is a stronger indicator
+
+## Screenshots
+
+| Screenshot | File | Description | Status |
+|---|---|---|---|
+| ![Alert 100200](../screenshots/detections/alert-100200-schtasks-base.png) | `alert-100200-schtasks-base.png` | Wazuh Dashboard → Security Events showing Rule 100200 alert with `schtasks.exe /create` in CommandLine | ☐ TODO |
+| ![Alert 100201](../screenshots/detections/alert-100201-system-privilege.png) | `alert-100201-system-privilege.png` | Wazuh Dashboard showing Rule 100201 alert (SYSTEM privilege) — ideally showing all three rules (100200, 100201, 100202) firing from the same test run | ☐ TODO |

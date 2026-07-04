@@ -102,3 +102,10 @@ The encoded command variant (rule 100101) triggered at level 14 due to higher co
 - Add exceptions for known parent processes (e.g., `ccmexec.exe` for SCCM) using a child rule with `<if_sid>100100</if_sid>` and level 0
 - Monitor for volume — a single bypass invocation from a known admin tool is less concerning than repeated invocations from `cmd.exe` or `explorer.exe`
 - The encoded command rule (100101) has a lower false positive rate and should rarely need tuning
+
+## Screenshots
+
+| Screenshot | File | Description | Status |
+|---|---|---|---|
+| ![Alert 100100](../screenshots/detections/alert-100100-bypass.png) | `alert-100100-bypass.png` | Wazuh Dashboard → Security Events filtered to Rule 100100 — alert showing `-ExecutionPolicy Bypass` in CommandLine field | ☐ TODO |
+| ![Alert 100101](../screenshots/detections/alert-100101-encoded.png) | `alert-100101-encoded.png` | Wazuh Dashboard → Security Events filtered to Rule 100101 — alert for `-EncodedCommand` PowerShell execution | ☐ TODO |

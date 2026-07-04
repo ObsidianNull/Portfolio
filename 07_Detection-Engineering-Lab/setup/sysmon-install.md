@@ -67,3 +67,10 @@ Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" -MaxEvents 5 | Form
 | 13 | Registry Value Set | Persistence mechanisms (supplementary) |
 
 Event ID 1 is the highest-value source for this lab. Command-line arguments captured in Sysmon Event ID 1 are the primary indicator for both PowerShell abuse and scheduled task creation detections.
+
+## Screenshots
+
+| Screenshot | File | Description | Status |
+|---|---|---|---|
+| ![Sysmon Service](../screenshots/setup/sysmon-service-running.png) | `sysmon-service-running.png` | PowerShell output of `Get-Service Sysmon64` on WS01 showing **Running** | ☐ TODO |
+| ![Sysmon Events](../screenshots/setup/sysmon-events-viewer.png) | `sysmon-events-viewer.png` | Event Viewer (or `Get-WinEvent`) showing recent events under `Microsoft-Windows-Sysmon/Operational` | ☐ TODO |

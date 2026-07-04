@@ -62,6 +62,12 @@ VMware's host-only adapter acts as the default gateway. DNS resolution is handle
 4. **Wazuh Indexer** stores alerts and raw events for search, correlation, and historical analysis.
 5. **Wazuh Dashboard** provides the analyst interface for alert triage, rule management, and visualization.
 
+## Screenshots
+
+| Screenshot | Description | Status |
+|---|---|---|
+| ![VMnet1 Config](../screenshots/architecture/vmnet1-config.png) | VMware Virtual Network Editor showing VMnet1 host-only adapter at 192.168.56.0/24 with DHCP disabled | ☐ TODO |
+
 ## Security Considerations
 
 - **Network isolation:** Host-only networking ensures no lab traffic reaches external networks. No NAT or bridged adapters are configured.
