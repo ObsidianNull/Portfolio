@@ -4,13 +4,12 @@
 
 Welcome to my cybersecurity portfolio. I am a U.S. Navy Nuclear Surface Warfare Officer and former Cyber Officer (USS Harper’s Ferry) transitioning into the private sector as a Cybersecurity Engineer. I hold a B.S. in Cyber Operations from a CAE-CO accredited university and a CompTIA Security+ certification. My operational background, technical foundation, and leadership experience enable me to approach cybersecurity with discipline, problem-solving, and mission focus.
 
-This portfolio demonstrates my hands-on cybersecurity skills through self-directed projects in vulnerability management, SIEM operations, incident response, network analysis, system hardening, and adversary emulation. All projects were built using my home lab environment (Windows, Linux, Splunk, Nessus, Wireshark, and Atomic Red Team).
+This portfolio demonstrates my hands-on cybersecurity skills through self-directed projects in detection engineering, SIEM operations, incident response, network analysis, system hardening, and adversary emulation. All projects were built using my home lab environment (Windows, Linux, Splunk, Wazuh, Wireshark, and Atomic Red Team).
 
 ## 🛡️ Core Competencies
 
 - **Threat Detection & Analysis** - SIEM correlation rules, log analysis, behavioral analytics
 - **Incident Response** - Malware analysis, forensic investigation, incident handling
-- **Vulnerability Management** - Scanning, assessment, remediation planning, risk prioritization
 - **Network Security** - Traffic analysis, protocol investigation, threat hunting
 - **System Hardening** - Security baseline configuration, compliance validation
 - **Purple Team Operations** - Attack simulation, detection validation, gap analysis
@@ -18,16 +17,16 @@ This portfolio demonstrates my hands-on cybersecurity skills through self-direct
 
 ## 📁 Projects
 
-### [01 - Vulnerability Management](./01_Vulnerability-Management)
-**Skills Demonstrated:** Vulnerability Scanning | Risk Assessment | Remediation Planning | Automation
+### [01 - Detection Engineering Lab](./01_Detection-Engineering-Lab)
+**Skills Demonstrated:** Detection Engineering | Wazuh SIEM | Sysmon Telemetry | Active Directory | MITRE ATT&CK
 
-Comprehensive vulnerability assessment and management project using Nessus Professional. Includes vulnerability scanning, risk-based prioritization, remediation workflows, and automated reporting.
+Detection engineering lab built on a VMware-based Active Directory environment with Wazuh SIEM and Sysmon. Custom detection rules authored and validated against controlled attack simulations across three MITRE ATT&CK techniques.
 
 **Key Highlights:**
-- Full vulnerability lifecycle management
-- Risk-based remediation prioritization
-- Documented remediation plans with timelines
-- Custom scanning scripts and automation
+- End-to-end Sysmon → Wazuh logging pipeline in a domain-joined environment
+- Custom Wazuh rules for PowerShell abuse, scheduled task persistence, and SMB lateral movement
+- Attack simulation with documented test scenarios and expected outcomes
+- Post-engagement detection analysis with false positive tuning and gap identification
 
 ---
 
@@ -94,26 +93,10 @@ Purple team exercises using Atomic Red Team to simulate real-world attack techni
 - Custom detection rule development
 - Continuous validation methodology
 
----
-
-### [07 - Detection Engineering Lab](./07_Detection-Engineering-Lab)
-**Skills Demonstrated:** Detection Engineering | Wazuh SIEM | Sysmon Telemetry | Active Directory | MITRE ATT&CK
-
-Detection engineering lab built on a VMware-based Active Directory environment with Wazuh SIEM and Sysmon. Custom detection rules authored and validated against controlled attack simulations across three MITRE ATT&CK techniques.
-
-**Key Highlights:**
-- End-to-end Sysmon → Wazuh logging pipeline in a domain-joined environment
-- Custom Wazuh rules for PowerShell abuse, scheduled task persistence, and SMB lateral movement
-- Attack simulation with documented test scenarios and expected outcomes
-- Post-engagement detection analysis with false positive tuning and gap identification
-
----
-
 ## 🔧 Technical Skills
 
 ### Security Tools & Platforms
 - **SIEM:** Splunk, Wazuh, Elastic Stack
-- **Vulnerability Management:** Nessus, OpenVAS
 - **Network Analysis:** Wireshark, tcpdump, Zeek, NetworkMiner
 - **Endpoint Security:** Sysmon, Windows Event Logs, EDR solutions
 - **Forensics:** Volatility, SIFT Workstation, Autopsy
@@ -139,7 +122,7 @@ Detection engineering lab built on a VMware-based Active Directory environment w
 
 | Project | Focus Area | Tools Used | Outcome |
 |---------|-----------|------------|---------|
-| Vulnerability Management | Risk Reduction | Nessus, PowerShell | Documented remediation strategy |
+| Detection Engineering Lab | Threat Detection | Wazuh, Sysmon | Validated custom detections in AD lab |
 | SIEM Detection | Threat Detection | Splunk | Production-ready correlation rules |
 | Incident Response | IR Procedures | SIFT, Volatility | Complete IR documentation |
 | Network Analysis | Network Security | Wireshark, Zeek | Suspicious traffic identification |
