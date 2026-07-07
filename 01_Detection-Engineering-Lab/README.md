@@ -47,7 +47,7 @@ See [architecture/overview.md](architecture/overview.md) for the full architectu
 ## Project Structure
 
 ```
-07_Detection-Engineering-Lab/
+01_Detection-Engineering-Lab/
 ├── README.md
 ├── architecture/
 │   └── overview.md
