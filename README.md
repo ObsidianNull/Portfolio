@@ -1,165 +1,157 @@
-# Cybersecurity Portfolio - LT Celine Tannous
+# Cybersecurity Portfolio — Celine Tannous
 
-## 🎯 Overview
+## Overview
 
-Welcome to my cybersecurity portfolio. I am a U.S. Navy Nuclear Surface Warfare Officer and former Cyber Officer (USS Harper’s Ferry) transitioning into the private sector as a Cybersecurity Engineer. I hold a B.S. in Cyber Operations from a CAE-CO accredited university and a CompTIA Security+ certification. My operational background, technical foundation, and leadership experience enable me to approach cybersecurity with discipline, problem-solving, and mission focus.
+I am a U.S. Navy Nuclear Surface Warfare Officer transitioning into civilian cybersecurity, with a B.S. in Cyber Operations from the United States Naval Academy, an active TS/SCI clearance, and CompTIA Security+. My background combines shipboard cybersecurity responsibility, nuclear technical leadership, and self-directed hands-on security engineering projects.
 
-This portfolio demonstrates my hands-on cybersecurity skills through self-directed projects in detection engineering, SIEM operations, incident response, network analysis, system hardening, and adversary emulation. All projects were built using my home lab environment (Windows, Linux, Splunk, Wazuh, Wireshark, and Atomic Red Team).
+This portfolio documents my practical cybersecurity development through home-lab projects focused on detection engineering, telemetry analysis, SIEM operations, adversary emulation, and defensive validation.
 
-## 🛡️ Core Competencies
+My current completed project is the Detection Engineering Lab. Additional projects are in development and will be added as they are completed and documented.
 
-- **Threat Detection & Analysis** - SIEM correlation rules, log analysis, behavioral analytics
-- **Incident Response** - Malware analysis, forensic investigation, incident handling
-- **Network Security** - Traffic analysis, protocol investigation, threat hunting
-- **System Hardening** - Security baseline configuration, compliance validation
-- **Purple Team Operations** - Attack simulation, detection validation, gap analysis
+## Current Status
 
+| Status         | Project                         | Focus                                                    |
+| -------------- | ------------------------------- | -------------------------------------------------------- |
+| Completed      | 01 — Detection Engineering Lab  | Wazuh, Sysmon, Active Directory, MITRE ATT&CK validation |
+| In Development | 02 — SIEM Detection Engineering | Splunk searches, dashboards, correlation logic           |
+| In Development | 03 — Incident Response          | IR workflow, triage notes, reporting                     |
+| In Development | 04 — Network Analysis           | Wireshark, packet analysis, suspicious traffic review    |
+| In Development | 05 — Windows Hardening          | CIS-style hardening, baseline comparison, validation     |
+| In Development | 06 — Purple Team Exercises      | Atomic Red Team, detection validation, gap tracking      |
 
-## 📁 Projects
+## Completed Project
 
-### [01 - Detection Engineering Lab](./01_Detection-Engineering-Lab)
-**Skills Demonstrated:** Detection Engineering | Wazuh SIEM | Sysmon Telemetry | Active Directory | MITRE ATT&CK
+### 01 — Detection Engineering Lab
 
-Detection engineering lab built on a VMware-based Active Directory environment with Wazuh SIEM and Sysmon. Custom detection rules authored and validated against controlled attack simulations across three MITRE ATT&CK techniques.
+Detection engineering lab built in a VMware-based Active Directory environment using Sysmon and Wazuh. The project focuses on endpoint telemetry collection, custom detection logic, controlled attack simulation, and alert validation.
 
-**Key Highlights:**
-- End-to-end Sysmon → Wazuh logging pipeline in a domain-joined environment
-- Custom Wazuh rules for PowerShell abuse, scheduled task persistence, and SMB lateral movement
-- Attack simulation with documented test scenarios and expected outcomes
-- Post-engagement detection analysis with false positive tuning and gap identification
+Skills demonstrated:
 
----
+* Detection engineering
+* Wazuh SIEM
+* Sysmon telemetry
+* Windows Event Log analysis
+* Active Directory lab administration
+* MITRE ATT&CK mapping
+* Atomic Red Team validation
+* Alert triage and tuning
 
-### [02 - SIEM Detection Engineering](./02_SIEM-Detection)
-**Skills Demonstrated:** Log Analysis | Correlation Rules | Dashboard Development | Threat Detection
+Key highlights:
 
-Security monitoring and detection engineering using Splunk. Developed custom correlation rules, security dashboards, and alert mechanisms for identifying attack patterns and anomalous behavior.
+* Built a domain-based Windows lab environment.
+* Deployed Sysmon telemetry collection.
+* Forwarded endpoint logs into Wazuh.
+* Authored custom Wazuh detection rules.
+* Validated detections against controlled adversary behaviors.
+* Documented detection logic, test activity, and alert evidence.
 
-**Key Highlights:**
-- Custom Splunk dashboards for brute force and DNS exfiltration detection
-- Production-ready correlation rules
-- Alert tuning and false positive reduction
-- Log source integration and normalization
+Techniques covered:
 
----
+* PowerShell abuse
+* Scheduled task persistence
+* SMB lateral movement
 
-### [03 - Incident Response](./03_Incident-Response)
-**Skills Demonstrated:** Malware Analysis | Forensics | Incident Handling | Documentation
+## Projects in Development
 
-End-to-end incident response procedures including detection, analysis, containment, eradication, and recovery. Features static malware analysis and comprehensive incident documentation.
+The following projects are planned or currently in progress. They are included to show the portfolio roadmap, not to claim completed work.
 
-**Key Highlights:**
-- Professional incident report templates
-- Static malware analysis workflows
-- IOC extraction and documentation
-- Structured incident response procedures
+### 02 — SIEM Detection Engineering
 
----
+Status: In Development
 
-### [04 - Network Analysis](./04_Network-Analysis)
-**Skills Demonstrated:** Packet Analysis | Protocol Investigation | Threat Hunting | Network Forensics
+Planned focus:
 
-Network traffic analysis using Wireshark and other tools to identify suspicious communications, protocol anomalies, and potential security threats.
+* Splunk search workflows
+* Security dashboards
+* Brute-force detection
+* DNS exfiltration detection
+* Alert tuning and false positive review
 
-**Key Highlights:**
-- Packet capture analysis and filtering
-- Suspicious traffic pattern identification
-- Network topology mapping
-- Protocol-level investigation
+### 03 — Incident Response
 
----
+Status: In Development
 
-### [05 - Windows Hardening](./05_Windows-Hardening)
-**Skills Demonstrated:** System Hardening | Security Baselines | Compliance | Configuration Management
+Planned focus:
 
-Windows system hardening project demonstrating security baseline implementation based on CIS benchmarks and industry best practices, with before/after vulnerability assessment validation.
+* Incident triage workflow
+* IOC documentation
+* Containment and recovery notes
+* Professional incident report template
 
-**Key Highlights:**
-- CIS benchmark implementation
-- Security control documentation
-- Measurable security improvement metrics
-- Group Policy and registry hardening
+### 04 — Network Analysis
 
----
+Status: In Development
 
-### [06 - Purple Team Exercises](./06_Purple-Team-Exercises)
-**Skills Demonstrated:** Attack Simulation | Detection Validation | MITRE ATT&CK | Security Testing
+Planned focus:
 
-Purple team exercises using Atomic Red Team to simulate real-world attack techniques and validate detection capabilities. Maps to MITRE ATT&CK framework for comprehensive coverage.
+* Wireshark packet analysis
+* Suspicious traffic review
+* Protocol investigation
+* Network evidence documentation
 
-**Key Highlights:**
-- MITRE ATT&CK technique execution
-- Detection gap analysis
-- Custom detection rule development
-- Continuous validation methodology
+### 05 — Windows Hardening
 
-## 🔧 Technical Skills
+Status: In Development
 
-### Security Tools & Platforms
-- **SIEM:** Splunk, Wazuh, Elastic Stack
-- **Network Analysis:** Wireshark, tcpdump, Zeek, NetworkMiner
-- **Endpoint Security:** Sysmon, Windows Event Logs, EDR solutions
-- **Forensics:** Volatility, SIFT Workstation, Autopsy
-- **Purple Team:** Atomic Red Team, MITRE ATT&CK Navigator
+Planned focus:
 
-### Operating Systems
-- Windows (10/11, Server 2016/2019/2022)
-- Linux (Ubuntu, Kali, CentOS)
+* Windows security baseline configuration
+* Local policy and registry hardening
+* Before/after validation
+* Security control documentation
 
-### Scripting & Automation
-- PowerShell
-- Python
-- Bash
-- Splunk SPL
+### 06 — Purple Team Exercises
 
-### Frameworks & Standards
-- MITRE ATT&CK
-- NIST Cybersecurity Framework
-- CIS Benchmarks
-- DISA STIGs
+Status: In Development
 
-## 📊 Portfolio Highlights
+Planned focus:
 
-| Project | Focus Area | Tools Used | Outcome |
-|---------|-----------|------------|---------|
-| Detection Engineering Lab | Threat Detection | Wazuh, Sysmon | Validated custom detections in AD lab |
-| SIEM Detection | Threat Detection | Splunk | Production-ready correlation rules |
-| Incident Response | IR Procedures | SIFT, Volatility | Complete IR documentation |
-| Network Analysis | Network Security | Wireshark, Zeek | Suspicious traffic identification |
-| Windows Hardening | System Security | Group Policy, CIS | Measurable security improvement |
-| Purple Team | Detection Validation | Atomic Red Team | Enhanced detection coverage |
+* Atomic Red Team execution
+* MITRE ATT&CK mapping
+* Detection gap analysis
+* Validation notes
 
-## 🎓 Certifications & Training
-- CompTIA Security+
+## Tools and Technologies
 
+Hands-on project experience:
 
+* Wazuh
+* Sysmon
+* Atomic Red Team
+* VMware
+* Active Directory
+* Windows Event Logs
 
-## 📫 Contact
+Working familiarity / prior exposure:
 
-**LinkedIn:** [Celine Tannous](https://www.linkedin.com/in/celine-tannous-34a44a1a7/)  
-**Email:** celinetannous2021@gmail.com  
-**GitHub:** [ObsidianNull](https://github.com/ObsidianNull)
+* Splunk
+* Nessus
+* Wireshark
+* Linux
+* pfSense
 
-## ⚓ Background Summary
-- U.S. Navy **LT**, Nuclear Surface Warfare Officer  
-- Former **Cyber Officer**, USS Harper’s Ferry  
-- B.S. Cyber Operations (CAE-CO accredited program)  
-- CompTIA Security+  
-- Extensive experience in risk management, network security, and operational decision-making 
+## Professional Background
 
----
+* U.S. Navy Nuclear Surface Warfare Officer
+* Former shipboard cybersecurity collateral-duty officer
+* Active TS/SCI clearance
+* CompTIA Security+
+* PenTest+ in progress
+* CySA+ in progress
+* B.S. Cyber Operations, United States Naval Academy
+* Graduated with Merit, 2021
 
-## 📝 How to Navigate This Portfolio
+## Portfolio Standard
 
-Each project folder contains:
-- **README.md** - Project overview, objectives, and methodology
-- **Documentation** - Analysis reports, procedures, and findings
-- **Screenshots** - Visual evidence of work performed
-- **Scripts/Code** - Automation scripts and custom tools
-- **Artifacts** - Configuration files, rules, and templates
+Each completed project should include:
 
-Feel free to explore each project folder for detailed documentation and artifacts.
+* Objective
+* Lab environment
+* Tools used
+* Step-by-step methodology
+* Evidence screenshots or sanitized logs
+* Findings
+* Lessons learned
+* Next improvements
 
----
-
-*This portfolio is continuously updated with new projects and improvements. Last updated: November 2025*
+Do not describe a project as completed until it has documentation, evidence, and a clear README.
