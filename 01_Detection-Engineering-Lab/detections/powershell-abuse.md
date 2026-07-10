@@ -4,7 +4,7 @@
 
 Adversaries frequently invoke `powershell.exe` with `-ExecutionPolicy Bypass` to circumvent script execution restrictions on Windows endpoints. This is a standard initial step in post-exploitation frameworks (Cobalt Strike, Empire, Metasploit) and living-off-the-land attack chains. Encoded command execution (`-EncodedCommand` / `-enc`) is also used to obfuscate malicious payloads.
 
-While bypassing execution policy is trivial and not a security boundary (Microsoft documents this), its presence in command-line arguments is a reliable behavioral indicator of non-standard PowerShell usage.
+While bypassing execution policy is trivial and not a security boundary (Microsoft documents this), its presence in command-line arguments is a reliable behavioral indicator of non-standard PowerShell usage. With this in mind, there is the expectation that some non-malicious use cases will trigger this rule generating unnecessary false positives. However, as long as this is known and accounted for, the rule will still be useful.
 
 ## MITRE ATT&CK Mapping
 
