@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Controlled attack simulation to validate detection coverage. Each scenario maps to a specific Wazuh detection rule and MITRE ATT&CK technique. All commands executed from WS01 (domain-joined workstation) under the `svc-admin` or `jsmith` account.
+Controlled attack simulation to validate detection coverage. Each scenario maps to a specific Wazuh detection rule and MITRE ATT&CK technique. All commands executed from WS01 (domain-joined workstation) under the `ObisidanNull` account.
 
 ## Pre-Test Checklist
 
@@ -17,8 +17,8 @@ Controlled attack simulation to validate detection coverage. Each scenario maps 
 ## Scenario 1: PowerShell Execution Policy Bypass
 
 **MITRE ATT&CK:** T1059.001 — Command and Scripting Interpreter: PowerShell  
-**Target Detection:** Rules 100100, 100101  
-**Executed From:** WS01 as `LAB\jsmith`
+**Target Detection:** Rule 100001 
+**Executed From:** WS01 as `DESKTOP-DSPUVF6\\ObsidianNull`
 
 ### Commands
 
@@ -40,7 +40,7 @@ cmd.exe /c powershell.exe -ExecutionPolicy Bypass -File C:\Temp\test-payload.ps1
 
 | Test | Expected Rule | Expected Level |
 |---|---|---|
-| Test 1 | 100100 | 12 |
+| Test 1 | 100001 | 12 |
 | Test 2 | 100100 | 12 |
 | Test 3 | 100101 | 14 |
 | Test 4 | 100100 | 12 |
@@ -137,5 +137,5 @@ After executing all scenarios:
 
 | Screenshot | File | Description | Status |
 |---|---|---|---|
-| ![PsExec Command](../screenshots/attack-simulation/psexec-command-execution.png) | `psexec-command-execution.png` | Command prompt on WS01 showing a PsExec or PowerShell bypass test command being executed | ☐ COMPLETE |
+| ![PsExec Command](../screenshots/attack-simulation/psexec-command-execution.png) | `psexec-command-execution.png` | Command prompt on WS01 showing a PowerShell bypass test command being executed | ☐ COMPLETE |
 | ![Real-Time Alerts](../screenshots/attack-simulation/realtime-alerts-during-test.png) | `realtime-alerts-during-test.png` | Wazuh Dashboard showing alerts populating in real time during a test scenario | ☐ COMPLETE |
