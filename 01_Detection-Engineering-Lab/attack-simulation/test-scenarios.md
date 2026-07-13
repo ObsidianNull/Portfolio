@@ -41,9 +41,9 @@ cmd.exe /c powershell.exe -ExecutionPolicy Bypass -File C:\Temp\test-payload.ps1
 | Test | Expected Rule | Expected Level |
 |---|---|---|
 | Test 1 | 100001 | 12 |
-| Test 2 | 100100 | 12 |
-| Test 3 | 100101 | 14 |
-| Test 4 | 100100 | 12 |
+| Test 2 | 100001 | 12 |
+| Test 3 | 100003 | 14 |
+| Test 4 | 100001 | 12 |
 
 ---
 
