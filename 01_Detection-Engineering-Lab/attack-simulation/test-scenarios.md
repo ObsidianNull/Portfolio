@@ -17,7 +17,7 @@ Controlled attack simulation to validate detection coverage. Each scenario maps 
 ## Scenario 1: PowerShell Execution Policy Bypass
 
 **MITRE ATT&CK:** T1059.001 — Command and Scripting Interpreter: PowerShell  
-**Target Detection:** Rule 100001 
+**Target Detection:** Rule 100001, 100002, 100003
 **Executed From:** WS01 as `DESKTOP-DSPUVF6\\ObsidianNull`
 
 ### Commands
@@ -43,7 +43,7 @@ cmd.exe /c powershell.exe -ExecutionPolicy Bypass -File C:\Temp\test-payload.ps1
 | Test 1 | 100001 | 12 |
 | Test 2 | 100001 | 12 |
 | Test 3 | 100003 | 14 |
-| Test 4 | 100001 | 12 |
+| Test 4 | 100002 | 12 |
 
 ---
 
