@@ -18,7 +18,7 @@ APT groups and commodity malware routinely create scheduled tasks as a persisten
 
 - **Sysmon Event ID 1** — Process Creation
 - **Key Fields:** `Image`, `CommandLine`, `ParentImage`, `User`
-- **Supplementary:** Sysmon Event ID 11 (File Create) for task XML files written to `C:\Windows\System32\Tasks\`
+- **Supplementary:** Sysmon Event ID 1 (File Create) for task XML files written to `C:\Windows\System32\Tasks\`
 
 ## Detection Logic
 
